@@ -1,0 +1,55 @@
+/* Accordion Item Styles */
+.eb-accordion-item {
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+/* Button Styles */
+.eb-accordion-button {
+  background-color: #f1f1f1;
+  padding: 15px;
+  width: 100%;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: background-color 0.3s ease;
+}
+
+.eb-accordion-button .eb-accordion-title {
+  background-color: transparent;
+  padding: 6px 0;
+  font-size: 20px;
+  font-weight: 500;
+  box-shadow: none;
+  padding-left: 25px;
+}
+
+.eb-accordion-button:hover {
+  background-color: #e2e2e2;
+}
+
+.eb-accordion-title {
+  margin: 0;
+}
+
+/* Collapsible Section */
+
+.eb-accordion-item .eb-accordion-collapse:not(.open) {
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.5s ease-out;
+}
+
+.eb-accordion-item .eb-accordion-collapse.open {
+  overflow: auto;
+  transition: all.5s ease-out;
+}
+/* Accordion Body */
+.eb-accordion-body {
+  margin: 0;
+  padding: 15px;
+}

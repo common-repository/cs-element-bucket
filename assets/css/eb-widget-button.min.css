@@ -1,0 +1,145 @@
+.eb-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 0px 30px;
+  overflow: hidden;
+  position: relative;
+  transition: all 500ms ease;
+  -webkit-transition: all 500ms ease;
+  z-index: 1;
+  width: max-content;
+  height: 60px;
+  text-align: center;
+  font-weight: 500;
+}
+
+.eb-btn.eb-btn-default.icon-left {
+  flex-direction: row-reverse;
+}
+
+.eb-btn.eb-btn-default.icon-right {
+  flex-direction: row;
+}
+
+.eb-btn.eb-btn-circle {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+}
+
+.eb-btn.eb-btn-circle.icon-top {
+  flex-direction: column-reverse;
+}
+
+.eb-btn.eb-btn-circle.icon-bottom {
+  flex-direction: column;
+}
+
+.eb-btn svg {
+  flex-shrink: 0;
+}
+
+.eb-btn.eb-btn-primary {
+  color: #030611;
+  background-color: #de6815;
+}
+
+/* .eb-btn.eb-btn-primary:hover {
+    color: #030611;
+    background-color: #030611;
+  } */
+
+/* == DEFAULT BUTTON HOVER EFFECT ONE == */
+.eb-btn.eb-btn-default.hover-effect-one::before {
+  position: absolute;
+  content: "";
+  background-color: #f7c600;
+  transition: all 900ms ease;
+  z-index: -1;
+  width: 0;
+  height: 100%;
+  top: 0;
+  left: -100%;
+  transform: skew(30deg);
+  transform-origin: top left;
+}
+
+.eb-btn.eb-btn-default.hover-effect-one:hover::before {
+  height: 100%;
+  width: 200%;
+}
+
+/* == DEFAULT BUTTON HOVER EFFECT TWO == */
+.eb-btn.eb-btn-default.hover-effect-two::before,
+.eb-btn.eb-btn-default.hover-effect-two::after {
+  position: absolute;
+  content: "";
+  background-color: #f7c600;
+  transition: all 900ms ease;
+  z-index: -1;
+  width: 0;
+  height: 100%;
+  top: 0;
+  bottom: 0;
+}
+
+.eb-btn.eb-btn-default.hover-effect-two::before {
+  left: 0;
+}
+.eb-btn.eb-btn-default.hover-effect-two::after {
+  right: 0;
+}
+
+.eb-btn.eb-btn-default.hover-effect-two:hover::before,
+.eb-btn.eb-btn-default.hover-effect-two:hover::after {
+  width: 50%;
+}
+
+/* == DEFAULT BUTTON HOVER EFFECT THREE == */
+.eb-btn.eb-btn-default.hover-effect-three::before,
+.eb-btn.eb-btn-default.hover-effect-three::after {
+  position: absolute;
+  content: "";
+  background-color: #f7c600;
+  transition: all 900ms ease;
+  z-index: -1;
+  width: 50%;
+  height: 0;
+}
+.eb-btn.eb-btn-default.hover-effect-three::before {
+  top: 0;
+  left: 0;
+}
+.eb-btn.eb-btn-default.hover-effect-three::after {
+  bottom: 0;
+  right: 0;
+}
+
+.eb-btn.eb-btn-default.hover-effect-three:hover::before,
+.eb-btn.eb-btn-default.hover-effect-three:hover::after {
+  width: 100%;
+  height: 100%;
+}
+
+/* == CIRCLE BUTTON HOVER EFFECT ONE == */
+.eb-btn.eb-btn-circle.hover-effect-one::before {
+  position: absolute;
+  content: "";
+  background-color: #f7c600;
+  transition: all 900ms ease;
+  z-index: -1;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transform-origin: top left;
+}
+
+.eb-btn.eb-btn-circle.hover-effect-one:hover::before {
+  height: 105%;
+  width: 105%;
+}

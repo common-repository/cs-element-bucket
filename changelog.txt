@@ -1,0 +1,9 @@
+## 1.0.2
+- Fixed business card module namespace issue
+
+## 1.0.1
+- Rename plugin name
+- Added business card module
+
+## 1.0.0
+- Initial Release

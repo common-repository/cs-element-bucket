@@ -1,0 +1,87 @@
+.cdx-single-service-card {
+  background-color: #ffffff;
+  padding: 50px;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 25px;
+  box-shadow: 10px 10px 0px 0px rgba(3, 6, 17, 0.06),
+    6px 14px 24px 0px rgba(18, 16, 16, 0.1);
+  min-height: 300px;
+}
+
+@media only screen and (max-width: 1199px) {
+  .cdx-single-service-card {
+    padding: 30px;
+  }
+}
+
+.cdx-single-service-card .cdx-icon {
+  height: 70px;
+  width: 70px;
+  background-color: #f7c600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  margin-bottom: 25px;
+}
+
+.cdx-single-service-card .cdx-title {
+  margin-bottom: 10px;
+}
+
+.cdx-single-service-card .cdx-description {
+  margin-bottom: 0;
+}
+
+.cdx-single-service-card .cdx-hover-wrap {
+  position: absolute;
+  left: 0;
+  top: 30px;
+  height: 100%;
+  width: 100%;
+  z-index: 2;
+  background-color: #f7c600;
+  padding: 50px;
+  visibility: hidden;
+  opacity: 0;
+  transition: 0.5s;
+}
+
+.cdx-single-service-card .cdx-hover-wrap .cdx-title:hover a {
+  color: #de6815;
+}
+
+.cdx-single-service-card .cdx-hover-wrap .cdx-description {
+  color: #121314;
+  margin-bottom: 50px;
+}
+
+.cdx-single-service-card .cdx-hover-wrap .cdx-read-more-btn-small {
+  padding: 14px 20px;
+  background-color: #ffffff;
+  font-weight: 500;
+}
+
+.cdx-single-service-card .cdx-hover-wrap .cdx-read-more-btn-small:hover {
+  background-color: #de6815;
+  color: #030611;
+}
+
+.cdx-single-service-card .cdx-hover-wrap .cdx-right-shape {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 120px;
+  transition: 0.4s;
+}
+
+.cdx-single-service-card:hover .cdx-hover-wrap {
+  visibility: visible;
+  opacity: 1;
+  top: 0;
+}
+
+.cdx-single-service-card:hover .cdx-hover-wrap .cdx-right-shape {
+  width: 220px;
+}

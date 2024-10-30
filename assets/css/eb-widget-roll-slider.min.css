@@ -1,0 +1,38 @@
+.eb-rollslider-area {
+    background-color: #FDFF30;
+    padding: 20px 0px;
+  }
+  
+  .eb-rollslider-area .swiper-wrapper {
+    transition-timing-function: linear;
+  }
+  
+  .eb-rollslide {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    width: auto !important;
+  }
+  
+  .eb-rollslide .title {
+    color: #030611;
+    font-size: 30px;
+    font-weight: 600;
+  }
+
+ .eb-rollslide .icon {
+    max-width: 100%; 
+    height: auto;   
+}
+.eb-rollslide .placeholder-icon {
+    width: 50px;
+    height: 50px;
+    object-fit: cover; 
+}
+
+  @media only screen and (max-width: 1599px) {
+    .eb-rollslide .title {
+      font-size: 21px;
+    }
+  }
+  

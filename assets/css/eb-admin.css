@@ -1,0 +1,528 @@
+/*==========================
+ CSS Index  
+============================
+01. Global Style
+02. Custom Grid
+03. Switcher
+04. Card
+05. Button
+05. Widget Counter
+06. Module
+07. Footer
+==========================*/
+
+/****************************
+  01. Global Style
+****************************/
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+.eb-admin-panel {
+  font-family: "Rethink Sans", sans-serif;
+  padding-left: 15px;
+  padding-right: 15px;
+  background-color: #eee;
+  box-sizing: border-box;
+}
+
+.eb-d-flex {
+  display: flex !important;
+  align-items: center;
+}
+
+.eb-justify-between {
+  justify-content: space-between;
+}
+.eb-items-center {
+  align-items: center;
+}
+
+/****************************
+  02. Custom Grid
+****************************/
+.eb-container {
+  max-width: 1320px;
+  margin: auto;
+  padding: 0 15px;
+}
+.eb-row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 0 -15px;
+  row-gap: 32px;
+}
+.eb-row [class^="eb-col-"] {
+  padding: 0 16px;
+}
+.eb-row .eb-col-1-of-2 {
+  width: 50%;
+}
+.eb-row .eb-col-1-of-3 {
+  width: 33.3333%;
+}
+.eb-row .eb-col-2-of-3 {
+  width: 66.6667%;
+}
+.eb-row .eb-col-1-of-4 {
+  width: 25%;
+}
+.eb-row .eb-col-2-of-4 {
+  width: 50%;
+}
+.eb-row .eb-col-3-of-4 {
+  width: 75%;
+}
+
+.eb-col-12 {
+  width: 100%;
+}
+
+.eb-col-11 {
+  width: 91.66%;
+}
+.eb-col-10 {
+  width: 83.33%;
+}
+.eb-col-9 {
+  width: 75%;
+}
+.eb-col-8 {
+  width: 66.66%;
+}
+.eb-col-7 {
+  width: 58.33%;
+}
+.eb-col-6 {
+  width: 50%;
+}
+.eb-col-5 {
+  width: 41.66%;
+}
+.eb-col-4 {
+  width: 33.33%;
+}
+.eb-col-3 {
+  width: 24.99%;
+}
+.eb-col-2 {
+  width: 16.66%;
+}
+.eb-col-1 {
+  width: 8.33%;
+}
+@media only screen and (max-width: 1024px) {
+  .eb-row .eb-col-1-of-4 {
+    width: 50%;
+  }
+  .eb-col-3 {
+    width: 50%;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .eb-row .eb-col-1-of-2,
+  .eb-row .eb-col-1-of-3,
+  .eb-row .eb-col-2-of-3,
+  .eb-row .eb-col-1-of-4,
+  .eb-row .eb-col-2-of-4,
+  .eb-row .eb-col-3-of-4 {
+    width: 100%;
+  }
+
+  .eb-col-3 {
+    width: 100%;
+  }
+}
+
+.eb-page-title {
+  color: #363d57;
+  font-family: "Rethink Sans";
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 46px;
+}
+.text-left {
+  text-align: left !important;
+}
+
+.text-right {
+  text-align: right !important;
+}
+
+.text-center {
+  text-align: center !important;
+}
+
+/****************************
+  03. Switcher
+****************************/
+.eb-module-activation-switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 20px;
+  background-color: #fff;
+  cursor: pointer;
+}
+.eb-module-activation-input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+}
+.active-label {
+  position: relative;
+  display: block;
+  height: inherit;
+  font-size: 10px;
+  text-transform: uppercase;
+  background: #eee;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.12),
+    inset 0 0 2px rgba(0, 0, 0, 0.15);
+}
+.active-label:before,
+.active-label:after {
+  position: absolute;
+  top: 50%;
+  margin-top: -0.5em;
+  line-height: 1;
+  -webkit-transition: inherit;
+  -moz-transition: inherit;
+  -o-transition: inherit;
+  transition: inherit;
+}
+.active-label:before {
+  content: attr(data-off);
+  right: 5px;
+  color: #808589;
+  font-weight: 700;
+}
+.active-label:after {
+  content: attr(data-on);
+  left: 5px;
+  color: #fff;
+  text-shadow: 0 1px rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  font-weight: 700;
+}
+.eb-module-activation-input:checked ~ .active-label {
+  background: #1fbf98;
+  border: #1fbf98;
+}
+.eb-module-activation-input:checked ~ .active-label:before {
+  opacity: 0;
+}
+.eb-module-activation-input:checked ~ .active-label:after {
+  opacity: 1;
+}
+.activation-handler {
+  position: absolute;
+  top: 1px;
+  left: 1px;
+  width: 18px;
+  height: 18px;
+  background: white;
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+  background-image: -webkit-linear-gradient(top, white 40%, #f0f0f0);
+  background-image: -moz-linear-gradient(top, white 40%, #f0f0f0);
+  background-image: -o-linear-gradient(top, white 40%, #f0f0f0);
+  background-image: linear-gradient(to bottom, white 40%, #f0f0f0);
+  -webkit-transition: left 0.15s ease-out;
+  -moz-transition: left 0.15s ease-out;
+  -o-transition: left 0.15s ease-out;
+  transition: left 0.15s ease-out;
+}
+.activation-handler:before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: -6px 0 0 -6px;
+  width: 12px;
+  height: 12px;
+  background: #f9f9f9;
+  box-shadow: inset 0 1px rgba(0, 0, 0, 0.02);
+  background-image: -webkit-linear-gradient(top, #eeeeee, white);
+  background-image: -moz-linear-gradient(top, #eeeeee, white);
+  background-image: -o-linear-gradient(top, #eeeeee, white);
+  background-image: linear-gradient(to bottom, #eeeeee, white);
+}
+.eb-module-activation-input:checked ~ .activation-handler {
+  left: 31px;
+  box-shadow: -1px 1px 5px rgba(0, 0, 0, 0.2);
+}
+
+/****************************
+  04. Button
+****************************/
+.eb-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #030611;
+  font-size: 16px;
+  font-weight: 500;
+  height: 50px;
+  line-height: 1;
+  padding: 0 20px;
+  border-radius: 0;
+  overflow: hidden;
+  position: relative;
+  border: 0;
+  border-radius: 4px;
+  font-size: 18px;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  font-weight: 500;
+  z-index: 0;
+}
+.eb-button::after {
+  content: "";
+  position: absolute;
+  transition: all 0.9s ease 0s;
+  z-index: -1;
+  height: 100%;
+  left: -35%;
+  top: 0;
+  transform: skew(30deg);
+  transform-origin: top left;
+  width: 0;
+}
+.eb-button:hover {
+  background-color: #5c636a;
+  border-color: #565e64;
+}
+.eb-button:hover:after {
+  height: 100%;
+  width: 135%;
+}
+.eb-button-primary {
+  border-radius: 10px;
+  background: #1fbf98;
+  color: #fff;
+  font-family: "Rethink Sans", sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 25px;
+}
+.eb-button-primary:after {
+  background: #de6815;
+}
+.eb-button-secondary {
+  background: #de6815;
+}
+.eb-button-secondary:after {
+  background: #f7c600;
+}
+
+/****************************
+  04. Card
+****************************/
+.eb-card {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 10px 10px 40px 10px rgba(3, 11, 41, 0.04);
+}
+.eb-card-title {
+  color: #363d57;
+  font-family: "Rethink Sans", sans-serif;
+  font-size: 45px;
+  font-style: normal;
+  font-weight: 700;
+  letter-spacing: -1.35px;
+  text-align: center;
+  margin: 15px 0px;
+}
+.eb-card-counter {
+  display: flex;
+  justify-content: space-between;
+}
+.eb-card-counter h3 {
+  color: #686e81;
+  text-align: center;
+  font-family: "Rethink Sans", sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+}
+.eb-card-counter p {
+  color: #363d57;
+  text-align: center;
+  font-family: "Rethink Sans", sans-serif;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  letter-spacing: -1.35px;
+  margin: 0px;
+}
+.eb-card-description {
+  font-size: 16px;
+  color: #808589;
+}
+
+/****************************
+  05. Widget Counter
+****************************/
+.eb-admin-widget-area {
+  padding: 40px 0;
+}
+.eb-widget-card {
+  transition: all 0.3s;
+}
+.eb-widget-card:hover {
+  box-shadow: 10px 10px 0px 0px rgba(3, 6, 17, 0.06),
+    6px 14px 24px 0px rgba(18, 16, 16, 0.1);
+}
+.eb-widget-card .eb-card-title {
+  font-size: 24px;
+}
+.card-counter {
+  font-size: 30px;
+  color: #030611;
+  font-weight: 700;
+}
+.used-time {
+  font-size: 16px;
+  color: #808589;
+}
+
+/****************************
+  06. Module
+****************************/
+.eb-module-area {
+  background-color: #fff;
+  box-shadow: 6px 14px 24px 0px rgba(18, 16, 16, 0.1);
+  padding: 40px 0;
+}
+.eb-area-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 40px;
+}
+.module-option {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.module-option-lebel {
+  font-size: 16px;
+  color: #030611;
+}
+.section-title {
+  font-size: 24px;
+  font-weight: 500;
+  color: #030611;
+}
+
+/* Sigle Module */
+.eb-single-module {
+  background-color: #fff;
+  box-shadow: 3px 3px 0px 0px rgba(3, 6, 17, 0.06),
+    -3px -3px 0px 0px rgba(3, 6, 17, 0.06);
+  transition: all 300ms ease;
+  border-radius: 4px;
+}
+.eb-single-module:hover {
+  box-shadow: 3px 3px 10px 0px rgba(18, 16, 16, 0.1),
+    -3px -3px 10px 0px rgba(18, 16, 16, 0.1);
+}
+.eb-single-module .eb-module-thumb {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  height: 100px;
+  overflow: hidden;
+  box-sizing: border-box;
+  position: relative;
+  background-image: url("public/images/widgets-thumb/thumb-button.png");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.eb-single-module .eb-module-thumb .eb-module-view {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  z-index: 1;
+  visibility: hidden;
+  opacity: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  transition: all 300ms ease;
+}
+.eb-single-module .eb-module-thumb .eb-module-view .eb-module-view-action {
+  font-size: 14px;
+  font-weight: 500;
+  background-color: #f7c600;
+  padding: 5px 10px;
+  text-decoration: none;
+  color: #fff;
+}
+.eb-single-module:hover .eb-module-thumb .eb-module-view {
+  visibility: visible;
+  opacity: 1;
+}
+.eb-single-module .eb-module-thumb .eb-state-label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 3px;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+.eb-single-module .eb-module-thumb .eb-state-label.eb-state-free {
+  background-color: #de681580;
+}
+.eb-single-module .eb-module-thumb .eb-state-label.eb-state-paid {
+  background-color: #f7c600;
+}
+.eb-single-module .eb-module-thumb .eb-state-label .eb-state-label-text {
+  color: #ffffff;
+  font-size: 12px;
+  padding: 2px 5px;
+  font-size: 10px;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+.eb-single-module .eb-module-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  border-top: 1px solid rgba(0, 0, 0, 0.12);
+}
+.eb-single-module .eb-module-footer .eb-moudle-name {
+  color: #808589;
+  font-size: 16px;
+  font-weight: 500;
+  flex-shrink: 0;
+  flex-grow: 1;
+  margin: 0;
+}
+
+/****************************
+  07. Footer
+****************************/
+.eb-copyright {
+  color: #1d2542;
+  font-family: "Rethink Sans", sans-serif;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 27px; /* 150% */
+  text-align: center;
+  margin-top: 50px;
+}
